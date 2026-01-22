@@ -30,6 +30,13 @@ YOU MUST NOT 명시적 허용 없이 규칙을 위반하는 코드를 작성하�
 @.cursor/rules/easy-refactoring.mdc
 @.cursor/rules/mui-custome-theme.mdc
 
+### 참조 문서 (Reference)
+@.claude/rules/components.md - 기존 컴포넌트 목록 (새 컴포넌트 생성 전 필수 확인)
+@.claude/rules/code-convention.md - 코드 컨벤션 상세
+@.claude/rules/design-system.md - 디자인 시스템 상세
+@.claude/rules/project-directory.md - 디렉토리 구조 상세
+@.claude/rules/storybook-writing.md - 스토리북 작성 가이드 상세
+
 ## Key Directories
 
 - `src/components/` – 재사용 UI 컴포넌트 (card, carousel, grid 등)
@@ -58,22 +65,39 @@ pnpm lint             # ESLint 검사
 4. 충돌 시 → 사용자에게 먼저 알림
 
 ### 컴포넌트 생성
-1. 요구사항 파악 → 기존 유사 컴포넌트 탐색
+1. **기존 컴포넌트 확인 (MUST)**:
+   - `@.claude/rules/components.md` 참조하여 유사 컴포넌트 존재 여부 확인
+   - 재활용 가능한 컴포넌트가 있으면 확장/조합하여 사용
+   - 새로 만들어야 할 경우에만 신규 생성 진행
 2. project-directory-rules.mdc에 따라 위치 결정
 3. **디자인 시스템 재활용 (MUST)**:
-   - 아이콘: Material Symbols 사용 (`src/stories/style/Icons.stories.jsx` 패턴 참고)
+   - 아이콘: lucide-react 아이콘 사용 (`src/components/style/Icons.stories.jsx` 패턴 참고)
    - 타이포그래피: MUI Typography 컴포넌트 사용
    - 기본 컴포넌트: 기존 `src/components/` 내 컴포넌트 우선 활용
-   - 커스텀 SVG/아이콘 생성 금지 (Material Symbols에 없는 경우만 예외)
+   - 커스텀 SVG/아이콘 생성 금지 (lucide-react에 없는 경우만 예외)
 4. 구현 (MUI 기반, sx prop 사용)
-5. Storybook 스토리 작성
-6. 린트 확인
+5. **Storybook 스토리 작성 (MUST)**:
+   - 컴포넌트와 같은 폴더에 `ComponentName.stories.jsx` 생성
+   - `tags: ['autodocs']` 포함
+   - argTypes로 모든 props 문서화
+   - Default 스토리 필수, 필요시 Variants 스토리 추가
+6. **components.md 업데이트 (MUST)**:
+   - `@.claude/rules/components.md`에 새 컴포넌트 정보 추가
+   - 형식: `- ComponentName: 설명 (\`경로\`)`
+7. 린트 확인 (`pnpm lint`)
 
 ### 컴포넌트 수정
 1. 현재 동작 파악
 2. 영향 범위 확인
 3. 수정 (기존 동작 유지)
-4. 스토리 업데이트 (필요 시)
+4. 스토리 업데이트 (props 변경 시 argTypes 동기화)
+5. `components.md` 설명 업데이트 (기능 변경 시)
+
+### 컴포넌트 삭제
+1. 의존성 확인 (해당 컴포넌트를 사용하는 곳)
+2. 컴포넌트 파일 삭제
+3. 스토리 파일 삭제
+4. `@.claude/rules/components.md`에서 해당 항목 제거
 
 ### 리팩토링
 1. 외부 동작 변경 없음 확인

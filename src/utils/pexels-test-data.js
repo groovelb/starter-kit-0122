@@ -4,25 +4,28 @@
  * 디자이너를 위한 시각적 영감 아카이빙 솔루션 MUSE용 테스트 데이터입니다.
  * Pexels API에서 제공하는 무료 스톡 미디어를 사용합니다.
  *
- * ## 카테고리
- * - branding: 브랜딩, 기업 아이덴티티, 로고 레퍼런스
- * - editorial: 에디토리얼, 매거진, 출판 디자인
- * - uiux: UI/UX 디자인, 인터페이스, 디지털 제품
- * - typography: 타이포그래피, 레터링, 폰트 레퍼런스
- * - photography: 제품 촬영, 라이프스타일, 광고 사진
+ * ## 이미지 카테고리
+ * - abstract: 추상 아트, 플루이드, 패턴
+ * - fineart: 파인 아트, 유화, 캔버스
+ * - illustration: 디지털 일러스트레이션, 아트워크
+ * - poster: 포스터, 타이포그래피, 그래픽
+ * - gradient: 그라디언트, 컬러, 홀로그래픽
+ * - photography: 제품 촬영, 스틸라이프, 에디토리얼
+ * - portrait: 포트레이트, 패션, 인물 사진
  * - spatial: 공간 디자인, 인테리어, 건축
- * - abstract: 추상, 그라디언트, 텍스처
- * - motion: 모션 그래픽, 영상, 애니메이션
+ *
+ * ## 비디오 카테고리
+ * - motion: 모션 그래픽, 추상 애니메이션
  *
  * ## 사용법
  * ```js
  * import { testImages, testVideos, getRandomImage } from '@/utils/pexels-test-data';
  *
  * // 특정 카테고리 이미지
- * <img src={testImages.branding[0].src.medium} />
+ * <img src={testImages.spatial[0].src.medium} />
  *
  * // 랜덤 이미지
- * <img src={getRandomImage('editorial').src.large} />
+ * <img src={getRandomImage('spatial').src.large} />
  * ```
  *
  * ## 라이선스
@@ -520,6 +523,170 @@ export const testImages = {
       src: createImageSizes(1642228),
       aspectRatio: '3/4',
       tags: ['portrait', 'contemporary', 'style'],
+    },
+  ],
+
+  // 공간 디자인 & 인테리어 (query: "interior design", "architecture", "minimal interior")
+  spatial: [
+    {
+      id: 1571460,
+      alt: 'Modern minimalist living room',
+      photographer: 'Jean van der Meulen',
+      src: createImageSizes(1571460),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'interior', 'living room'],
+    },
+    {
+      id: 1643383,
+      alt: 'Contemporary bedroom design',
+      photographer: 'Jean van der Meulen',
+      src: createImageSizes(1643383),
+      aspectRatio: '4/3',
+      tags: ['spatial', 'bedroom', 'modern'],
+    },
+    {
+      id: 1457842,
+      alt: 'White minimal interior space',
+      photographer: 'Jean van der Meulen',
+      src: createImageSizes(1457842),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'minimal', 'white'],
+    },
+    {
+      id: 2724749,
+      alt: 'Scandinavian style interior',
+      photographer: 'Emre Can Acer',
+      src: createImageSizes(2724749),
+      aspectRatio: '3/4',
+      tags: ['spatial', 'scandinavian', 'cozy'],
+    },
+    {
+      id: 1080721,
+      alt: 'Minimal architecture staircase',
+      photographer: 'Alex Qian',
+      src: createImageSizes(1080721),
+      aspectRatio: '3/4',
+      tags: ['spatial', 'architecture', 'staircase'],
+    },
+    {
+      id: 2062426,
+      alt: 'Industrial loft space',
+      photographer: 'Vecislavas Popa',
+      src: createImageSizes(2062426),
+      aspectRatio: '4/3',
+      tags: ['spatial', 'industrial', 'loft'],
+    },
+    {
+      id: 1648776,
+      alt: 'Modern kitchen interior',
+      photographer: 'Mark McCammon',
+      src: createImageSizes(1648776),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'kitchen', 'modern'],
+    },
+    {
+      id: 2029667,
+      alt: 'Architectural concrete design',
+      photographer: 'Sebastian Palomino',
+      src: createImageSizes(2029667),
+      aspectRatio: '4/3',
+      tags: ['spatial', 'concrete', 'brutalist'],
+    },
+    {
+      id: 1457847,
+      alt: 'Bright living room with sofa',
+      photographer: 'Jean van der Meulen',
+      src: createImageSizes(1457847),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'living room', 'bright'],
+    },
+    {
+      id: 2251247,
+      alt: 'Modern office workspace',
+      photographer: 'Marc Mueller',
+      src: createImageSizes(2251247),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'office', 'workspace'],
+    },
+    {
+      id: 2440471,
+      alt: 'Minimalist bathroom design',
+      photographer: 'Vecislavas Popa',
+      src: createImageSizes(2440471),
+      aspectRatio: '3/4',
+      tags: ['spatial', 'bathroom', 'minimal'],
+    },
+    {
+      id: 1090638,
+      alt: 'Cozy cafe interior',
+      photographer: 'Jason Leung',
+      src: createImageSizes(1090638),
+      aspectRatio: '4/3',
+      tags: ['spatial', 'cafe', 'cozy'],
+    },
+    {
+      id: 2635038,
+      alt: 'Hotel lobby design',
+      photographer: 'Rachel Claire',
+      src: createImageSizes(2635038),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'hotel', 'luxury'],
+    },
+    {
+      id: 1743227,
+      alt: 'Gallery exhibition space',
+      photographer: 'Medhat Ayad',
+      src: createImageSizes(1743227),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'gallery', 'exhibition'],
+    },
+    {
+      id: 2121121,
+      alt: 'Dining room with pendant lights',
+      photographer: 'Max Vakhtbovych',
+      src: createImageSizes(2121121),
+      aspectRatio: '4/3',
+      tags: ['spatial', 'dining', 'lighting'],
+    },
+    {
+      id: 1571453,
+      alt: 'Home library interior',
+      photographer: 'Jean van der Meulen',
+      src: createImageSizes(1571453),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'library', 'home'],
+    },
+    {
+      id: 2462015,
+      alt: 'Retail store interior',
+      photographer: 'Max Vakhtbovych',
+      src: createImageSizes(2462015),
+      aspectRatio: '4/3',
+      tags: ['spatial', 'retail', 'store'],
+    },
+    {
+      id: 1909791,
+      alt: 'Wooden floor living space',
+      photographer: 'Max Vakhtbovych',
+      src: createImageSizes(1909791),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'wood', 'warm'],
+    },
+    {
+      id: 2089698,
+      alt: 'Restaurant interior design',
+      photographer: 'Igor Starkov',
+      src: createImageSizes(2089698),
+      aspectRatio: '4/3',
+      tags: ['spatial', 'restaurant', 'modern'],
+    },
+    {
+      id: 2102587,
+      alt: 'Luxury apartment interior',
+      photographer: 'Max Vakhtbovych',
+      src: createImageSizes(2102587),
+      aspectRatio: '16/9',
+      tags: ['spatial', 'apartment', 'luxury'],
     },
   ],
 };
